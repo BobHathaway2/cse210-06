@@ -1,5 +1,5 @@
-# Batter
-vpong is a clone of the classic pong game.
+# Cpong
+cpong is a clone of the classic pong game.
 
 ## Getting Started
 ---
@@ -19,7 +19,7 @@ project folder. Select the main module inside the hunter folder and click the "r
 The project files and folders are organized as follows:
 ```
 root                    (project root folder)
-+-- vpong               (source code for game)
++-- cpong               (source code for game)
   +-- game              (specific game classes)
     +-- casting         (various actor classes)
     +-- directing       (director and scene manager classes)
