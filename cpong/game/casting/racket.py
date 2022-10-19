@@ -7,7 +7,7 @@ class Racket(Actor):
     """A implement used to hit and bounce the ball in the game."""
     
     def __init__(self, body, animation, debug = False):
-        """Constructs a new Bat.
+        """Constructs a new Racket.
         
         Args:Args:
             body: A new instance of Body.
