@@ -90,7 +90,7 @@ class SceneManager:
         self._add_score(cast)
         self._add_ball(cast)
         # self._add_bricks(cast)
-        self._add_racket(cast)
+        self._add_rackets(cast)
         self._add_dialog(cast, ENTER_TO_START)
 
         self._add_initialize_script(script)
@@ -104,7 +104,7 @@ class SceneManager:
     def _prepare_next_level(self, cast, script):
         self._add_ball(cast)
         # self._add_bricks(cast)
-        self._add_racket(cast)
+        self._add_rackets(cast)
         self._add_dialog(cast, PREP_TO_LAUNCH)
 
         script.clear_actions(INPUT)
@@ -114,7 +114,7 @@ class SceneManager:
         
     def _prepare_try_again(self, cast, script):
         self._add_ball(cast)
-        self._add_racket(cast)
+        self._add_rackets(cast)
         self._add_dialog(cast, PREP_TO_LAUNCH)
 
         script.clear_actions(INPUT)
@@ -133,7 +133,7 @@ class SceneManager:
 
     def _prepare_game_over(self, cast, script):
         self._add_ball(cast)
-        self._add_racket(cast)
+        self._add_rackets(cast)
         self._add_dialog(cast, WAS_GOOD_GAME)
 
         script.clear_actions(INPUT)
@@ -227,17 +227,21 @@ class SceneManager:
         stats = Stats()
         cast.add_actor(STATS_GROUP, stats)
 
-    def _add_racket(self, cast):
+    def _add_rackets(self, cast):
         cast.clear_actors(RACKET_GROUP)
-        x = CENTER_X - RACKET_WIDTH / 2
-        y = SCREEN_HEIGHT - RACKET_HEIGHT
-        position = Point(x, y)
-        size = Point(RACKET_WIDTH, RACKET_HEIGHT)
-        velocity = Point(0, 0)
-        body = Body(position, size, velocity)
-        animation = Animation(RACKET_IMAGES, RACKET_RATE)
-        racket = Racket(body, animation)
-        cast.add_actor(RACKET_GROUP, racket)
+        for i in range(2):
+            x = CENTER_X - RACKET_WIDTH / 2
+            if i == 0:
+                y = FIELD_TOP 
+            else:
+                y = SCREEN_HEIGHT - RACKET_HEIGHT
+            position = Point(x, y)
+            size = Point(RACKET_WIDTH, RACKET_HEIGHT)
+            velocity = Point(0, 0)
+            body = Body(position, size, velocity)
+            animation = Animation(RACKET_IMAGES, RACKET_RATE)
+            racket = Racket(body, animation)
+            cast.add_actor(RACKET_GROUP, racket)
 
     # ----------------------------------------------------------------------------------------------
     # scripting methods
