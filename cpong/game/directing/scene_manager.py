@@ -226,6 +226,7 @@ class SceneManager:
         cast.clear_actors(STATS_GROUP)
         stats = Stats()
         cast.add_actor(STATS_GROUP, stats)
+        cast.add_actor(STATS_GROUP, stats)
 
     def _add_rackets(self, cast):
         cast.clear_actors(RACKET_GROUP)
