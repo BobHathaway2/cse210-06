@@ -104,19 +104,6 @@ RACKET_HEIGHT = 28
 RACKET_RATE = 6
 RACKET_VELOCITY = 7
 
-# BRICK
-BRICK_GROUP = "bricks"
-BRICK_IMAGES = {
-    "b": [f"cpong/assets/images/{i:03}.png" for i in range(10,19)],
-    "g": [f"cpong/assets/images/{i:03}.png" for i in range(20,29)],
-    "p": [f"cpong/assets/images/{i:03}.png" for i in range(30,39)],
-    "y": [f"cpong/assets/images/{i:03}.png" for i in range(40,49)]
-}
-BRICK_WIDTH = 80
-BRICK_HEIGHT = 28
-BRICK_DELAY = 0.5
-BRICK_RATE = 4
-BRICK_POINTS = 50
 
 # DIALOG
 DIALOG_GROUP = "dialogs"
