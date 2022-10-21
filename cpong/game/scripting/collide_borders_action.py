@@ -28,20 +28,11 @@ class CollideBordersAction(Action):
 
         if y <= (FIELD_TOP):
             stats = cast.get_actors(STATS_GROUP)
-            stats[1].add_points(1)
-            
-            if stats[1].get_lives() > 0:
-                callback.on_next(TRY_AGAIN) 
-            else:
-                callback.on_next(GAME_OVER)
-                self._audio_service.play_sound(over_sound)
+            stats[1]._score +=1
+            callback.on_next(TRY_AGAIN) 
 
         elif y >= (FIELD_BOTTOM - BALL_WIDTH):
             stats = cast.get_actors(STATS_GROUP)
             stats[0].add_points(1)
-            
-            if stats[0].get_lives() > 0:
-                callback.on_next(TRY_AGAIN) 
-            else:
-                callback.on_next(GAME_OVER)
-                self._audio_service.play_sound(over_sound)
+            callback.on_next(TRY_AGAIN) 
+  
