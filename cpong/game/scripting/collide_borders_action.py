@@ -28,7 +28,7 @@ class CollideBordersAction(Action):
 
         if y <= (FIELD_TOP):
             stats = cast.get_actors(STATS_GROUP)
-            stats[1]._score +=1
+            stats[1].add_points
             callback.on_next(TRY_AGAIN) 
 
         elif y >= (FIELD_BOTTOM - BALL_WIDTH):
