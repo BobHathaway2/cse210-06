@@ -19,20 +19,20 @@ class CollideBordersAction(Action):
         over_sound = Sound(OVER_SOUND)
 
         if x < FIELD_LEFT:
-            ball.bounce_x()
-            self._audio_service.play_sound(bounce_sound)
-
-        elif x >= (FIELD_RIGHT - BALL_WIDTH):
-            ball.bounce_x()
-            self._audio_service.play_sound(bounce_sound)
-
-        if y <= (FIELD_TOP):
             stats = cast.get_actors(STATS_GROUP)
             stats[1].add_points
             callback.on_next(TRY_AGAIN) 
 
-        elif y >= (FIELD_BOTTOM - BALL_WIDTH):
+        elif x >= (FIELD_RIGHT - BALL_WIDTH):
             stats = cast.get_actors(STATS_GROUP)
             stats[0].add_points(1)
             callback.on_next(TRY_AGAIN) 
+
+        if y <= (FIELD_TOP):
+            ball.bounce_y()
+            self._audio_service.play_sound(bounce_sound)
+
+        elif y >= (FIELD_BOTTOM - BALL_WIDTH):
+            ball.bounce_y()
+            self._audio_service.play_sound(bounce_sound)
   

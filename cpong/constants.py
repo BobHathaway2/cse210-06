@@ -98,9 +98,10 @@ BALL_VELOCITY = 6
 
 # RACKET
 RACKET_GROUP = "rackets"
-RACKET_IMAGES = [f"cpong/assets/images/{n:03}.png" for n in range(100, 103)]
-RACKET_WIDTH = 106
-RACKET_HEIGHT = 28
+RACKET_IMAGES = [f"cpong/assets/images/{n:03}.png" for n in range(100, 103)], [f"cpong/assets/images/{n:03}.png" for n in range(103, 106)]
+# RACKET_IMAGES1 = [f"cpong/assets/images/{n:03}.png" for n in range(103, 106)]
+RACKET_WIDTH = 28
+RACKET_HEIGHT = 106
 RACKET_RATE = 6
 RACKET_VELOCITY = 7
 

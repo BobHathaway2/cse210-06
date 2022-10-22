@@ -57,7 +57,7 @@ class SceneManager:
     UNLOAD_ASSETS_ACTION = UnloadAssetsAction(AUDIO_SERVICE, VIDEO_SERVICE)
 
     def __init__(self):
-        pass
+        self._first_player_start = True
 
     def prepare_scene(self, scene, cast, script):
         if scene == NEW_GAME:
@@ -141,8 +141,13 @@ class SceneManager:
 
     def _add_ball(self, cast):
         cast.clear_actors(BALL_GROUP)
-        x = CENTER_X - BALL_WIDTH / 2
-        y = SCREEN_HEIGHT - RACKET_HEIGHT - BALL_HEIGHT  
+        y = SCREEN_HEIGHT / 2  - BALL_HEIGHT / 2
+        if self._first_player_start:
+            x = RACKET_WIDTH
+            self._first_player_start = False
+        else:
+            x = SCREEN_WIDTH - RACKET_WIDTH - BALL_WIDTH
+            self._first_player_start = True
         position = Point(x, y)
         size = Point(BALL_WIDTH, BALL_HEIGHT)
         velocity = Point(0, 0)
@@ -188,16 +193,16 @@ class SceneManager:
     def _add_rackets(self, cast):
         cast.clear_actors(RACKET_GROUP)
         for i in range(2):
-            x = CENTER_X - RACKET_WIDTH / 2
+            y = CENTER_Y - RACKET_HEIGHT / 2
             if i == 0:
-                y = FIELD_TOP 
+                x = 0
             else:
-                y = SCREEN_HEIGHT - RACKET_HEIGHT
+                x = SCREEN_WIDTH - RACKET_WIDTH
             position = Point(x, y)
             size = Point(RACKET_WIDTH, RACKET_HEIGHT)
             velocity = Point(0, 0)
             body = Body(position, size, velocity)
-            animation = Animation(RACKET_IMAGES, RACKET_RATE)
+            animation = Animation(RACKET_IMAGES[i], RACKET_RATE)
             racket = Racket(body, animation)
             cast.add_actor(RACKET_GROUP, racket)
 
