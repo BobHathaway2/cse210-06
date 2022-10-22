@@ -78,7 +78,6 @@ class SceneManager:
     def _prepare_new_game(self, cast, script):
         self._add_stats(cast)
         self._add_level(cast)
-        self._add_lives(cast)
         self._add_score(cast)
         self._add_ball(cast)
         self._add_rackets(cast)
@@ -170,12 +169,6 @@ class SceneManager:
         label = Label(text, position)
         cast.add_actor(LEVEL_GROUP, label)
 
-    def _add_lives(self, cast):
-        cast.clear_actors(LIVES_GROUP)
-        text = Text(LIVES_FORMAT, FONT_FILE, FONT_SMALL, ALIGN_RIGHT)
-        position = Point(SCREEN_WIDTH - HUD_MARGIN, HUD_MARGIN)
-        label = Label(text, position)
-        cast.add_actor(LIVES_GROUP, label)
 
     def _add_score(self, cast):
         cast.clear_actors(SCORE_GROUP)
