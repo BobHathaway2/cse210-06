@@ -19,7 +19,7 @@ class Racket(Actor):
         self._animation = animation
 
     def get_animation(self):
-        """Gets the bat's animation.
+        """Gets the racket's animation.
         
         Returns:
             An instance of Animation.
@@ -27,7 +27,7 @@ class Racket(Actor):
         return self._animation
 
     def get_body(self):
-        """Gets the bat's body.
+        """Gets the racket's body.
         
         Returns:
             An instance of Body.
@@ -35,7 +35,7 @@ class Racket(Actor):
         return self._body
 
     def move_next(self):
-        """Moves the bat using its velocity."""
+        """Moves the racket using its velocity."""
         position = self._body.get_position()
         velocity = self._body.get_velocity()
         new_position = position.add(velocity)
@@ -52,6 +52,6 @@ class Racket(Actor):
         self._body.set_velocity(velocity)
     
     def stop_moving(self):
-        """Stops the bat from moving."""
+        """Stops the racket from moving."""
         velocity = Point(0, 0)
         self._body.set_velocity(velocity)

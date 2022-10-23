@@ -3,6 +3,7 @@ from game.scripting.action import Action
 
 
 class ControlRacketAction(Action):
+    """Controls the racket's movement up and down"""
 
     def __init__(self, keyboard_service):
         self._keyboard_service = keyboard_service
