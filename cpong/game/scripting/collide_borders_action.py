@@ -20,13 +20,10 @@ class CollideBordersAction(Action):
 
         if x < FIELD_LEFT:
             stats = cast.get_actors(STATS_GROUP)
-            stats[1].add_points
-            callback.on_next(TRY_AGAIN) 
+            callback.on_next(GAME_OVER) 
 
         elif x >= (FIELD_RIGHT - BALL_WIDTH):
-            stats = cast.get_actors(STATS_GROUP)
-            stats[0].add_points(1)
-            callback.on_next(TRY_AGAIN) 
+            callback.on_next(GAME_OVER) 
 
         if y <= (FIELD_TOP):
             ball.bounce_y()

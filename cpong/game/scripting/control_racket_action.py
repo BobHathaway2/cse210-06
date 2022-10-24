@@ -15,14 +15,14 @@ class ControlRacketAction(Action):
             if i == 0:
                 if self._keyboard_service.is_key_down('e'): 
                     racket.move_up()
-                elif self._keyboard_service.is_key_down('c'): 
+                elif self._keyboard_service.is_key_down('d'): 
                     racket.move_down()  
                 else: 
                     racket.stop_moving()
             else:
-                if self._keyboard_service.is_key_down('u'): 
+                if self._keyboard_service.is_key_down('i'): 
                     racket.move_up()
-                elif self._keyboard_service.is_key_down('m'): 
+                elif self._keyboard_service.is_key_down('k'): 
                     racket.move_down()  
                 else: 
                     racket.stop_moving()

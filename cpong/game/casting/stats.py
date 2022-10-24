@@ -9,15 +9,15 @@ class Stats(Actor):
         """Constructs a new Stats."""
         super().__init__(debug)
         self._level = 1
-        self._score = 0
+        self._volleys = 0
 
-    def add_points(self, points):
+    def add_volley(self, points):
         """Adds the given points to the score.
         
         Args:
             points: A number representing the points to add.
         """
-        self._score += points
+        self._volleys += points
 
     def get_level(self):
         """Gets the level.
@@ -28,13 +28,13 @@ class Stats(Actor):
         return self._level
 
   
-    def get_score(self):
+    def get_volleys(self):
         """Gets the score.
 
         Returns:
             A number representing the score.
         """
-        return self._score
+        return self._volleys
 
     
     def next_level(self):

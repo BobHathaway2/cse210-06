@@ -1,5 +1,6 @@
 # Cpong
-cpong is a clone of the classic pong game.
+cpong is a clone of the classic pong game with a twist that you're trying to get the highest volley count you can 
+playing with both hands instead of against another player.
 
 ## Getting Started
 ---
@@ -13,6 +14,10 @@ python3 vpong
 ```
 You can also run the program from an IDE like Visual Studio Code. Start your IDE and open the 
 project folder. Select the main module inside the hunter folder and click the "run" icon.
+```
+Use the 'e' and 'd' keys to move the left racket up and down and use the 'i' and 'k' keys to move the right racket up and down
+Add a volley with each 'touch' of the racket. (With the animation, sometimes more than one!)
+```
 
 ## Project Structure
 ---

@@ -18,6 +18,8 @@ class CollideRacketAction(Action):
             racket_body = racket.get_body()
 
             if self._physics_service.has_collided(ball_body, racket_body):
+                stats = cast.get_first_actor(STATS_GROUP)
+                stats.add_volley(1)
                 ball.bounce_x()
                 sound = Sound(BOUNCE_SOUND)
                 self._audio_service.play_sound(sound)    

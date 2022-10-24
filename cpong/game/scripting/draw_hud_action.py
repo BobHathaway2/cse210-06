@@ -9,7 +9,7 @@ class DrawHudAction(Action):
         
     def execute(self, cast, script, callback):
         stats = cast.get_first_actor(STATS_GROUP)
-        self._draw_label(cast, SCORE_GROUP, SCORE_FORMAT, stats.get_score())
+        self._draw_label(cast, SCORE_GROUP, SCORE_FORMAT, stats.get_volleys())
 
     def _draw_label(self, cast, group, format_str, data):
         the_value_to_display = format_str.format(data)
