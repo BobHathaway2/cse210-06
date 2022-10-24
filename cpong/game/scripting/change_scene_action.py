@@ -3,7 +3,7 @@ from game.scripting.action import Action
 
 
 class ChangeSceneAction(Action):
-
+    """ changes the scene based on game conditions """
     def __init__(self, keyboard_service, next_scene):
         self._keyboard_service = keyboard_service
         self._next_scene = next_scene

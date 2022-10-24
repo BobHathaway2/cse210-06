@@ -4,7 +4,7 @@ from game.scripting.action import Action
 
 
 class CollideBordersAction(Action):
-
+    """ handles collisions with each border, top, bottom, left and right"""
     def __init__(self, physics_service, audio_service):
         self._physics_service = physics_service
         self._audio_service = audio_service    
@@ -21,9 +21,11 @@ class CollideBordersAction(Action):
         if x < FIELD_LEFT:
             stats = cast.get_actors(STATS_GROUP)
             callback.on_next(GAME_OVER) 
+            self._audio_service.play_sound(over_sound)
 
         elif x >= (FIELD_RIGHT - BALL_WIDTH):
             callback.on_next(GAME_OVER) 
+            self._audio_service.play_sound(over_sound)
 
         if y <= (FIELD_TOP):
             ball.bounce_y()

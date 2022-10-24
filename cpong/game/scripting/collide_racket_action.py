@@ -4,7 +4,8 @@ from game.scripting.action import Action
 
 
 class CollideRacketAction(Action):
-
+    """ Handles collisions with the racket, adds a volley for each collision to the score"""
+    
     def __init__(self, physics_service, audio_service):
         self._physics_service = physics_service
         self._audio_service = audio_service
